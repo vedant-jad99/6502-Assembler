@@ -4,7 +4,6 @@
  
 #include "change_name.h"
 #include "common.h"
-#include <stdint.h>
 
 /*
  * Tests to check the enum value.
@@ -32,7 +31,7 @@ uint8_t enum_access2() {
 
 uint8_t enum_access3() {
 	uint8_t val = NOP;
-	if(val == 35) {
+	if(val == 35U) {
 		return 1U;
 	}
 	return 0U;
@@ -67,14 +66,6 @@ uint8_t run_tests(uint8_t (*func[3U]) ()) {
 int main() {
 	uint8_t (*func[3])() = {enum_access1, enum_access2, enum_access3};
 	uint8_t result = run_tests(func);
-	printf("\nTotal test cases passed... %u\n", result);
-	if(result == 3) {
-		printf("Test %s passed...", __FILE__);
-		printf(GREEN  "COMPLETE\n" RESET);
-	}
-	else {
-		printf("Test(s) in %s failed with %u fail(s) ", __FILE__, 3 - result);
-		printf(RED "FAILED" RESET);
-	}
+	print_test_result(result, __FILE__);
 	return 0;
 }

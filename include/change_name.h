@@ -1,8 +1,6 @@
 #ifndef CHANGE_NAME
 #define CHANGE_NAME
 
-#include <stdio.h>
-
 typedef enum {
 	ADC, AND, ASL,
 	BBR, BBS, BCC,
