@@ -1,8 +1,8 @@
 #include "common.h"
 
-void print_test_result(uint8_t result, char *file_name) {
+void print_test_result(uint8_t result, uint8_t expected, char *file_name) {
 	printf("\nTotal test cases passed... %u\n", result);
-	if(result == 3) {
+	if(result == expected) {
 		printf("Test %s passed...", file_name);
 		printf(GREEN  "COMPLETE\n" RESET);
 	}

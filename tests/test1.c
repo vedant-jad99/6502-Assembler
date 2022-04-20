@@ -65,7 +65,7 @@ uint8_t run_tests(uint8_t (*func[3U]) ()) {
 
 int main() {
 	uint8_t (*func[3])() = {enum_access1, enum_access2, enum_access3};
-	uint8_t result = run_tests(func);
-	print_test_result(result, __FILE__);
+	uint8_t result = run_tests(func), expected = 3U;
+	print_test_result(result, expected, __FILE__);
 	return 0;
 }

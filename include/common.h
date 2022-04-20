@@ -7,6 +7,6 @@
 #include <stdint.h>
 #include <stdio.h>
 
-void print_test_result(uint8_t result, char *file_name);
+void print_test_result(uint8_t result, uint8_t expected, char *file_name);
 
 #endif
